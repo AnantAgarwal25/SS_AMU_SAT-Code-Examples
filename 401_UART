@@ -1,0 +1,23 @@
+#include "main.h"
+
+int main(void)
+{
+  
+  HAL_Init();
+
+  SystemClock_Config();
+
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {uint8_t Test[] = "Hello World !!!\r\n"; //Data to send
+   HAL_UART_Transmit(&huart2,Test,sizeof(Test),10);// Sending in normal mode
+   HAL_Delay(1000);
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
+}
