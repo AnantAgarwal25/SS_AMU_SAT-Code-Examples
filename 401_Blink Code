@@ -5,11 +5,13 @@ int main(void)
   
   MX_GPIO_Init();
   MX_USART2_UART_Init();
-  
+  int c=0;
   while (1)
   {	HAL_GPIO_TogglePin (GPIOA, GPIO_PIN_5);
-	HAL_Delay (100);   // 100 ms delay
-   
-  }
+	HAL_Delay (100);   /* Insert delay 100 ms */
+	c=c+1;
+	if(c == 100){
+		break;
+	}
  
 }
